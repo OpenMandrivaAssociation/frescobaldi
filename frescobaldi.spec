@@ -16,6 +16,7 @@ BuildRequires:	python-dbus >= 0.82.4
 Requires:	python-kde4
 Requires:	python-dbus >= 0.82.4
 Requires:	lilypond-kde4 >= 0.2
+Requires:	okular
 
 %description 
 Frescobaldi is a LilyPond sheet music editor for KDE4. It aims to be
