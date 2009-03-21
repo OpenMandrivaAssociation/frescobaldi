@@ -10,7 +10,7 @@ BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch:	noarch
 BuildRequires:	kde4-macros
 BuildRequires:	imagemagick
-BuildRequires:	python-kde4
+BuildRequires:	python-kde4 >= 1:4.2.0
 BuildRequires:	lilypond
 BuildRequires:	python-dbus >= 0.82.4
 Requires:	python-kde4
