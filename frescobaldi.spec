@@ -50,7 +50,7 @@ powerful, yet lightweight and easy to use.
 rm -rf %{buildroot}
 %{makeinstall_std} -C build
 
-%find_lang %name
+%find_lang %name --with-html
 
 %clean
 rm -rf %{buildroot}
