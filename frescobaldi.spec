@@ -35,6 +35,7 @@ powerful, yet lightweight and easy to use.
 %_kde_bindir/*
 %_kde_datadir/applications/kde4/*.desktop
 %_kde_appsdir/%name
+%_kde_datadir/config/*
 %_kde_iconsdir/*/*/*/*
 
 #--------------------------------------------------------------------
