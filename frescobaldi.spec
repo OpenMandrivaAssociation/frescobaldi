@@ -9,9 +9,10 @@ Url: 		http://www.frescobaldi.org/
 BuildArch:	noarch
 BuildRequires:	kde4-macros
 BuildRequires:	imagemagick
+BuildRequires:	qt4-devel
 BuildRequires:	kdelibs4-devel
 BuildRequires:	python-kde4 >= 1:4.2.0
-#BuildRequires:	lilypond
+BuildRequires:	lilypond
 BuildRequires:	python-dbus >= 0.82.4
 Requires:	lilypond
 Requires:	python-kde4
