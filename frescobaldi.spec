@@ -1,7 +1,7 @@
 Summary:	A LilyPond sheet music editor for KDE4
 Name:		frescobaldi
 Version: 	2.0.1
-Release: 	2
+Release: 	3
 Source0: 	http://lilykde.googlecode.com/files/%name-%version.tar.gz
 License: 	GPLv2+
 Group: 		Graphical desktop/KDE
@@ -15,6 +15,7 @@ BuildRequires:	python-kde4 >= 1:4.2.0
 BuildRequires:	lilypond
 BuildRequires:	python-dbus >= 0.82.4
 Requires:	lilypond
+Requires:	python-poppler-qt4
 Requires:	python-kde4
 Requires:	python-dbus >= 0.82.4
 
