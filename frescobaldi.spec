@@ -1,32 +1,25 @@
-Summary:	A LilyPond sheet music editor for KDE4
+Summary:	A LilyPond sheet music editor
 Name:		frescobaldi
-Version: 	2.0.1
-Release: 	3
-Source0: 	http://lilykde.googlecode.com/files/%name-%version.tar.gz
+Version: 	2.0.2
+Release: 	1
+Source0: 	http://lilykde.googlecode.com/files/%{name}-%{version}.tar.gz
 License: 	GPLv2+
 Group: 		Graphical desktop/KDE
 Url: 		http://www.frescobaldi.org/
 BuildArch:	noarch
-BuildRequires:	kde4-macros
-BuildRequires:	imagemagick
-BuildRequires:	qt4-devel
-BuildRequires:	kdelibs4-devel
-BuildRequires:	python-kde4 >= 1:4.2.0
-BuildRequires:	lilypond
-BuildRequires:	python-dbus >= 0.82.4
 Requires:	lilypond
 Requires:	python-poppler-qt4
-Requires:	python-kde4
-Requires:	python-dbus >= 0.82.4
+Requires:	python-qt4
 
 %description 
-Frescobaldi is a LilyPond sheet music editor for KDE4. It aims to be
-powerful, yet lightweight and easy to use.
+Frescobaldi is a LilyPond sheet music editor. It aims to be powerful, yet
+lightweight and easy to use.
 
 %files
-%_kde_bindir/*
-%_kde_datadir/applications/*.desktop
-%{_prefix}/lib/python2.7/site-packages/*
+%doc COPYING ChangeLog README THANKS TODO
+%{_bindir}/*
+%{py_puresitedir}/*
+%{_datadir}/applications/*.desktop
 %{_iconsdir}/hicolor/scalable/apps/%{name}.svg
 
 #--------------------------------------------------------------------
@@ -34,9 +27,8 @@ powerful, yet lightweight and easy to use.
 %prep
 %setup -q
 
-
 %build
 python setup.py build
 
 %install
-python setup.py install --prefix=%{buildroot}%{_prefix}
+python setup.py install --root=%{buildroot}
