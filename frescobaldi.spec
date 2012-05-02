@@ -1,6 +1,6 @@
 Summary:	A LilyPond sheet music editor
 Name:		frescobaldi
-Version: 	2.0.5
+Version:	2.0.6
 Release: 	1
 Source0: 	http://lilykde.googlecode.com/files/%{name}-%{version}.tar.gz
 License: 	GPLv2+
@@ -68,6 +68,7 @@ lightweight and easy to use.
 %lang(pt_BR) %{py_puresitedir}/frescobaldi_app/po/pt_BR.mo
 %lang(ru) %{py_puresitedir}/frescobaldi_app/po/ru.mo
 %lang(tr) %{py_puresitedir}/frescobaldi_app/po/tr.mo
+%lang(uk) %{py_puresitedir}/frescobaldi_app/po/uk.mo
 
 #--------------------------------------------------------------------
 
