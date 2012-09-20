@@ -1,11 +1,11 @@
 Summary:	A LilyPond sheet music editor
 Name:		frescobaldi
-Version:	2.0.6
-Release: 	1
-Source0: 	http://lilykde.googlecode.com/files/%{name}-%{version}.tar.gz
-License: 	GPLv2+
-Group: 		Graphical desktop/KDE
-Url: 		http://www.frescobaldi.org/
+Version:	2.0.8
+Release:	1
+Source0:	https://github.com/downloads/wbsoft/frescobaldi/%{name}-%{version}.tar.gz
+License:	GPLv2+
+Group:		Graphical desktop/KDE
+Url:		http://www.frescobaldi.org/
 BuildArch:	noarch
 Requires:	lilypond
 Requires:	python-poppler-qt4
