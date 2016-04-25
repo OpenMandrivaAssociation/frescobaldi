@@ -47,7 +47,7 @@ desktop-file-install                                         \
 for file in %{buildroot}%{python_sitelib}/%{name}_app/po/*.mo; do
     bn=$(basename $file)
     language=$(basename $file|cut -f 2 -d _|sed 's|\..*||')
-    echo %%lang\($language\) %{python_sitelib}/%{name}_app/po/$bn >> frescobaldi.lang
+    echo %%lang\($language\) %{py_puresitedir}/%{name}_app/po/$bn >> frescobaldi.lang
     done
 
 
@@ -65,7 +65,7 @@ find %{buildroot}%{py_puresitedir}/%{name}_app/ -name "*.py*" -exec chmod 644 {}
 %{py_puresitedir}/%{name}_app
 # use our find-lang
 %exclude %{py_puresitedir}/%{name}_app/po/*.mo
-%{py_puresitedir}/%{name}-%{version}-py2.7.egg-info
+%{py_puresitedir}/%{name}-%{version}-py*.egg-info
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
 %{_mandir}/man1/frescobaldi.1.xz
