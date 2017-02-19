@@ -3,7 +3,7 @@
 
 Summary:	A LilyPond sheet music editor
 Name:		frescobaldi
-Version:	2.19.0
+Version:	3.0.0
 Release:	1
 Source0:	https://github.com/wbsoft/%{name}/releases/download/v%{version}/%{name}-%{version}.tar.gz
 License:	GPLv2+
@@ -12,9 +12,10 @@ Url:		http://www.frescobaldi.org/
 BuildArch:	noarch
 BuildRequires:	desktop-file-utils
 BuildRequires:	python-devel
+BuildRequires:	python-setuptools
 BuildRequires:	gettext
-Requires:	python-qt4
-Requires:	python-poppler-qt4
+Requires:	python-qt5
+Requires:	python-poppler-qt5
 Requires:	lilypond
 Suggests:	portmidi
 
