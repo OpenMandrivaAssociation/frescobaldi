@@ -3,7 +3,7 @@
 
 Summary:	A LilyPond sheet music editor
 Name:		frescobaldi
-Version:	2.19.0
+Version:	2.20.0
 Release:	1
 Source0:	https://github.com/wbsoft/%{name}/releases/download/v%{version}/%{name}-%{version}.tar.gz
 License:	GPLv2+
