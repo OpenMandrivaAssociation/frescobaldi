@@ -64,8 +64,6 @@ find %{buildroot}%{py_puresitedir}/%{name}_app/ -name "*.py*" -exec chmod 644 {}
 %doc ChangeLog COPYING README* THANKS TODO
 %{_bindir}/%{name}
 %{py_puresitedir}/%{name}_app
-# use our find-lang
-%exclude %{py_puresitedir}/%{name}_app/po/*.mo
 %{py_puresitedir}/%{name}-%{version}-py*.egg-info
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
