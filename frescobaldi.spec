@@ -3,7 +3,7 @@
 
 Summary:	A LilyPond sheet music editor
 Name:		frescobaldi
-Version:	3.0.0
+Version:	3.1.1
 Release:	1
 Source0:	https://github.com/wbsoft/%{name}/releases/download/v%{version}/%{name}-%{version}.tar.gz
 License:	GPLv2+
@@ -14,6 +14,7 @@ BuildRequires:	desktop-file-utils
 BuildRequires:	python-devel
 BuildRequires:	python-setuptools
 BuildRequires:	gettext
+Requires:   python3dist(python-ly)
 Requires:	python-qt5
 Requires:	python-poppler-qt5
 Requires:	lilypond
@@ -29,8 +30,8 @@ find -name "*.py"  -exec sed -i -e 's|#! python||' {} \;
 
 %build
 python setup.py build
-cd %{name}_app/po
-make
+#cd %{name}_app/po
+#make
 
 %install
 python ./setup.py install --skip-build --root=%{buildroot}
@@ -60,13 +61,11 @@ sed -i -e 's|#!/usr/bin/python||' \
 # fix permissions
 find %{buildroot}%{py_puresitedir}/%{name}_app/ -name "*.py*" -exec chmod 644 {} \;
 
-%files -f %{name}.lang
+%files
 %doc ChangeLog COPYING README* THANKS TODO
 %{_bindir}/%{name}
 %{py_puresitedir}/%{name}_app
-# use our find-lang
-%exclude %{py_puresitedir}/%{name}_app/po/*.mo
 %{py_puresitedir}/%{name}-%{version}-py*.egg-info
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
-%{_mandir}/man1/frescobaldi.1.xz
+%{_mandir}/man1/frescobaldi.1.*
