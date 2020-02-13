@@ -29,8 +29,8 @@ find -name "*.py"  -exec sed -i -e 's|#! python||' {} \;
 
 %build
 python setup.py build
-cd %{name}_app/po
-make
+#cd %{name}_app/po
+#make
 
 %install
 python ./setup.py install --skip-build --root=%{buildroot}
