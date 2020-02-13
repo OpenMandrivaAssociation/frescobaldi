@@ -14,6 +14,7 @@ BuildRequires:	desktop-file-utils
 BuildRequires:	python-devel
 BuildRequires:	python-setuptools
 BuildRequires:	gettext
+Requires:   python3dist(python-ly)
 Requires:	python-qt5
 Requires:	python-poppler-qt5
 Requires:	lilypond
