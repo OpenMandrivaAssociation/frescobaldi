@@ -60,7 +60,7 @@ sed -i -e 's|#!/usr/bin/python||' \
 # fix permissions
 find %{buildroot}%{py_puresitedir}/%{name}_app/ -name "*.py*" -exec chmod 644 {} \;
 
-%files -f %{name}.lang
+%files
 %doc ChangeLog COPYING README* THANKS TODO
 %{_bindir}/%{name}
 %{py_puresitedir}/%{name}_app
