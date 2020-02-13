@@ -3,8 +3,8 @@
 
 Summary:	A LilyPond sheet music editor
 Name:		frescobaldi
-Version:	3.0.0
-Release:	2
+Version:	3.1.1
+Release:	1
 Source0:	https://github.com/wbsoft/%{name}/releases/download/v%{version}/%{name}-%{version}.tar.gz
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -69,4 +69,4 @@ find %{buildroot}%{py_puresitedir}/%{name}_app/ -name "*.py*" -exec chmod 644 {}
 %{py_puresitedir}/%{name}-%{version}-py*.egg-info
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
-%{_mandir}/man1/frescobaldi.1.xz
+%{_mandir}/man1/frescobaldi.1.*
