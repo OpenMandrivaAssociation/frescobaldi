@@ -37,7 +37,6 @@ lightweight and easy to use.
 
 %prep
 %setup -q
-find -name "*.py"  -exec sed -i -e 's|#! python||' {} \;
 
 %build
 %py_build
@@ -51,5 +50,5 @@ find -name "*.py"  -exec sed -i -e 's|#! python||' {} \;
 %{py_puresitedir}/%{name}_app
 %{py_puresitedir}/%{name}-%{version}-py*.egg-info
 %{_datadir}/applications/org.%{name}.Frescobaldi.desktop
-%{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
+%{_iconsdir}/hicolor/scalable/apps/org.%{name}.Frescobaldi.svg
 %{_mandir}/man1/frescobaldi.1.*
