@@ -40,43 +40,16 @@ lightweight and easy to use.
 find -name "*.py"  -exec sed -i -e 's|#! python||' {} \;
 
 %build
-python setup.py build
-#cd %{name}_app/po
-#make
+%py_build
 
 %install
-python ./setup.py install --skip-build --root=%{buildroot}
-
-# menu entry
-desktop-file-install                                         \
-   --dir=%{buildroot}%{_datadir}/applications                \
-   --remove-category=Application                             \
-   --add-category=AudioVideo                                 \
-   --add-category=X-Notation                                 \
-   --delete-original                                         \
-   %{name}.desktop
-   
-# create lang files
-for file in %{buildroot}%{python_sitelib}/%{name}_app/po/*.mo; do
-    bn=$(basename $file)
-    language=$(basename $file|cut -f 2 -d _|sed 's|\..*||')
-    echo %%lang\($language\) %{py_puresitedir}/%{name}_app/po/$bn >> frescobaldi.lang
-    done
-
-
-# fix shebangs
-sed -i -e 's|#!/usr/bin/python||' \
-    %{buildroot}%{py_puresitedir}/%{name}_app/language_names/generate.py
-
-    
-# fix permissions
-find %{buildroot}%{py_puresitedir}/%{name}_app/ -name "*.py*" -exec chmod 644 {} \;
+%py_install
 
 %files
 %doc ChangeLog COPYING README* THANKS TODO
 %{_bindir}/%{name}
 %{py_puresitedir}/%{name}_app
 %{py_puresitedir}/%{name}-%{version}-py*.egg-info
-%{_datadir}/applications/%{name}.desktop
+%{_datadir}/applications/org.%{name}.Frescobaldi.desktop
 %{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
 %{_mandir}/man1/frescobaldi.1.*
