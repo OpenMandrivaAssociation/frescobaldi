@@ -3,9 +3,9 @@
 
 Summary:	A LilyPond sheet music editor
 Name:		frescobaldi
-Version:	3.1.1
+Version:	3.1.2
 Release:	1
-Source0:	https://github.com/wbsoft/%{name}/releases/download/v%{version}/%{name}-%{version}.tar.gz
+Source0:	https://github.com/wbsoft/frescobaldi/releases/download/v%{version}/%{name}-%{version}.tar.gz
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://www.frescobaldi.org/
@@ -14,6 +14,17 @@ BuildRequires:	desktop-file-utils
 BuildRequires:	python-devel
 BuildRequires:	python-setuptools
 BuildRequires:	gettext
+
+Requires:   python-qt5-core
+Requires:   python-qt5-gui
+Requires:   python-qt5-network
+Requires:   python-qt5-printsupport
+Requires:   python-qt5-svg
+Requires:   python-qt5-webkit
+Requires:   python-qt5-webkitwidgets
+Requires:   python-qt5-widgets
+Requires:   python-qt5-xml
+
 Requires:   python3dist(python-ly)
 Requires:	python-qt5
 Requires:	python-poppler-qt5
