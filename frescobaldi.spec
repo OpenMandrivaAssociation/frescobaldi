@@ -3,9 +3,9 @@
 
 Summary:	A LilyPond sheet music editor
 Name:		frescobaldi
-Version:	3.1.1
+Version:	3.1.2
 Release:	1
-Source0:	https://github.com/wbsoft/%{name}/releases/download/v%{version}/%{name}-%{version}.tar.gz
+Source0:	https://github.com/wbsoft/frescobaldi/releases/download/v%{version}/%{name}-%{version}.tar.gz
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://www.frescobaldi.org/
@@ -14,6 +14,17 @@ BuildRequires:	desktop-file-utils
 BuildRequires:	python-devel
 BuildRequires:	python-setuptools
 BuildRequires:	gettext
+
+Requires:   python-qt5-core
+Requires:   python-qt5-gui
+Requires:   python-qt5-network
+Requires:   python-qt5-printsupport
+Requires:   python-qt5-svg
+Requires:   python-qt5-webkit
+Requires:   python-qt5-webkitwidgets
+Requires:   python-qt5-widgets
+Requires:   python-qt5-xml
+
 Requires:   python3dist(python-ly)
 Requires:	python-qt5
 Requires:	python-poppler-qt5
@@ -26,46 +37,18 @@ lightweight and easy to use.
 
 %prep
 %setup -q
-find -name "*.py"  -exec sed -i -e 's|#! python||' {} \;
 
 %build
-python setup.py build
-#cd %{name}_app/po
-#make
+%py_build
 
 %install
-python ./setup.py install --skip-build --root=%{buildroot}
-
-# menu entry
-desktop-file-install                                         \
-   --dir=%{buildroot}%{_datadir}/applications                \
-   --remove-category=Application                             \
-   --add-category=AudioVideo                                 \
-   --add-category=X-Notation                                 \
-   --delete-original                                         \
-   %{name}.desktop
-   
-# create lang files
-for file in %{buildroot}%{python_sitelib}/%{name}_app/po/*.mo; do
-    bn=$(basename $file)
-    language=$(basename $file|cut -f 2 -d _|sed 's|\..*||')
-    echo %%lang\($language\) %{py_puresitedir}/%{name}_app/po/$bn >> frescobaldi.lang
-    done
-
-
-# fix shebangs
-sed -i -e 's|#!/usr/bin/python||' \
-    %{buildroot}%{py_puresitedir}/%{name}_app/language_names/generate.py
-
-    
-# fix permissions
-find %{buildroot}%{py_puresitedir}/%{name}_app/ -name "*.py*" -exec chmod 644 {} \;
+%py_install
 
 %files
 %doc ChangeLog COPYING README* THANKS TODO
 %{_bindir}/%{name}
 %{py_puresitedir}/%{name}_app
 %{py_puresitedir}/%{name}-%{version}-py*.egg-info
-%{_datadir}/applications/%{name}.desktop
-%{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
+%{_datadir}/applications/org.%{name}.Frescobaldi.desktop
+%{_iconsdir}/hicolor/scalable/apps/org.%{name}.Frescobaldi.svg
 %{_mandir}/man1/frescobaldi.1.*
