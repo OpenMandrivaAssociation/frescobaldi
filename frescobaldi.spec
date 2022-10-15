@@ -35,15 +35,6 @@ Suggests:	portmidi
 Frescobaldi is a LilyPond sheet music editor. It aims to be powerful, yet
 lightweight and easy to use.
 
-%prep
-%setup -q
-
-%build
-%py_build
-
-%install
-%py_install
-
 %files
 %doc ChangeLog COPYING README* THANKS TODO
 %{_bindir}/%{name}
@@ -52,3 +43,15 @@ lightweight and easy to use.
 %{_datadir}/applications/org.%{name}.Frescobaldi.desktop
 %{_iconsdir}/hicolor/scalable/apps/org.%{name}.Frescobaldi.svg
 %{_mandir}/man1/frescobaldi.1.*
+
+#-----------------------------------------------------------------------
+
+%prep
+%autosetup -p1
+
+%build
+%py_build
+
+%install
+%py_install
+
