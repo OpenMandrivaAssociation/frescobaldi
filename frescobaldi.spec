@@ -8,7 +8,7 @@ Release:	2
 Source0:	https://github.com/wbsoft/frescobaldi/releases/download/v%{version}/%{name}-%{version}.tar.gz
 License:	GPLv2+
 Group:		Graphical desktop/KDE
-Url:		http://www.frescobaldi.org/
+Url:		https://www.frescobaldi.org/
 BuildArch:	noarch
 BuildRequires:	desktop-file-utils
 BuildRequires:	python-devel
