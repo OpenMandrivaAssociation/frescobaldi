@@ -1,0 +1,4 @@
+# The translation files are in %%{py_puresitedir}/frescobaldi/i18n,
+# but it looks like it needs to be this way (see TRANSLATIONS.md);
+# moreover there are  other packages putting this stuff in %%{py_puresitedir} (eg picard)
+addFilter("W: file-not-in-%lang")
