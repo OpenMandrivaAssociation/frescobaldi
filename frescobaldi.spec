@@ -29,7 +29,7 @@ Requires:	python-qt6-webengine
 Requires:	python-qt6-widgets
 Requires:	python-qt6-xml
 Requires:	python-qpageview >= 1.0.1
-Requires:	python-ly) >= 0.9.5
+Requires:	python-ly >= 0.9.5
 # Import not present anywhere in the sources
 #Requires:	python-poppler-qt5
 Requires:	lilypond
