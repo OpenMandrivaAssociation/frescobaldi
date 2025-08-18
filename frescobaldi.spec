@@ -12,9 +12,11 @@ Group:	Graphical desktop/KDE
 Url:		https://www.frescobaldi.org/
 #BuildRequires:	desktop-file-utils
 BuildRequires:	gettext
+BuildRequires:	python3dist(hatchling)
 BuildRequires:	python3dist(pyproject-api)
 BuildRequires:	python3dist(setuptools)
 BuildRequires:	python3dist(setuptools-scm)
+BuildRequires:	python3dist(wheel)
 BuildRequires:	pkgconfig(python)
 
 Requires:	python-qt6-core >= 6.6
