@@ -14,7 +14,7 @@ Url:		https://www.frescobaldi.org/
 BuildRequires:	gettext
 BuildRequires:	python3dist(pyproject-api)
 BuildRequires:	python3dist(setuptools)
-BuildRequires:	python3dist(setuptools_scm)
+BuildRequires:	python3dist(setuptools-scm)
 BuildRequires:	pkgconfig(python)
 
 Requires:	python-qt6-core >= 6.6
