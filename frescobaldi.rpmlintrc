@@ -2,3 +2,6 @@
 # but it looks like it needs to be this way (see TRANSLATIONS.md);
 # moreover there are  other packages putting this stuff in %%{py_puresitedir} (eg picard)
 addFilter("W: file-not-in-%lang")
+
+# Bazillion of errors for useless detail
+addFilter("E: incorrect-fsf-address")

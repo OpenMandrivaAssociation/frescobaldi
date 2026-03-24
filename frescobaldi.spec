@@ -3,13 +3,13 @@
 
 Summary:	A LilyPond sheet music editor
 Name:	frescobaldi
-Version:	4.0.4
-Release:	3
-Source0:	https://github.com/wbsoft/frescobaldi/releases/download/v%{version}/%{name}-%{version}.tar.gz
-Source100:	frescobaldi.rpmlintrc
+Version:	4.0.5
+Release:	1
 License:	GPLv2+
 Group:	Graphical desktop/KDE
 Url:		https://www.frescobaldi.org/
+Source0:	https://github.com/wbsoft/frescobaldi/releases/download/v%{version}/%{name}-%{version}.tar.gz
+Source100:	frescobaldi.rpmlintrc
 #BuildRequires:	desktop-file-utils
 BuildRequires:	gettext
 BuildRequires:	python3dist(hatchling)
@@ -19,17 +19,17 @@ BuildRequires:	python3dist(setuptools-scm)
 BuildRequires:	python3dist(wheel)
 BuildRequires:	pkgconfig(python)
 
-Requires:	python-qt6-core >= 6.6
-Requires:	python-qt6-gui
-Requires:	python-qt6-network
-Requires:	python-qt6-printsupport
-Requires:	python-qt6-svg
-Requires:	python-qt6-webchannel
-Requires:	python-qt6-webengine
-Requires:	python-qt6-widgets
-Requires:	python-qt6-xml
+#Requires:	python-qt6-core >= 6.6
+#Requires:	python-qt6-gui
+#Requires:	python-qt6-network
+#Requires:	python-qt6-printsupport
+#Requires:	python-qt6-svg
+#Requires:	python-qt6-webchannel
+#Requires:	python-qt6-webengine
+#Requires:	python-qt6-widgets
+#Requires:	python-qt6-xml
 Requires:	python-qpageview >= 1.0.1
-Requires:	python-ly >= 0.9.5
+#Requires:	python-ly >= 0.9.5
 # Import not present anywhere in the sources
 #Requires:	python-poppler-qt5
 Requires:	lilypond
