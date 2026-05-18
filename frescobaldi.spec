@@ -13,6 +13,7 @@ Source100:	frescobaldi.rpmlintrc
 #BuildRequires:	desktop-file-utils
 BuildRequires:	gettext
 BuildRequires:	python3dist(hatchling)
+BuildRequires:	python3dist(pip)
 BuildRequires:	python3dist(pyproject-api)
 BuildRequires:	python3dist(setuptools)
 BuildRequires:	python3dist(setuptools-scm)
